@@ -180,7 +180,6 @@ class ViewController: UIViewController {
         self.winnerPaidTitleLabel.center = CGPoint(x: contaierView.frame.width * cSixth * 5, y: contaierView.frame.height * cThird * 2)
         self.winnerPaidTitleLabel.textAlignment = NSTextAlignment.Center
         contaierView.addSubview(self.winnerPaidTitleLabel)
-        
     }
     
 }
