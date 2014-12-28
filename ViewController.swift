@@ -17,6 +17,14 @@ class ViewController: UIViewController {
     
     var titleLabel:UILabel!
     
+    // Information labels
+    var creditsLabel:UILabel!
+    var betLabel:UILabel!
+    var winnerPaidLabel:UILabel!
+    var creditsTitleLabel:UILabel!
+    var betTitleLabel:UILabel!
+    var winnerPaidTitleLabel:UILabel!
+    
     let cMarginForView:CGFloat = 10.0
     let cMarginForSlot:CGFloat = 2.0
     
@@ -32,6 +40,7 @@ class ViewController: UIViewController {
         setupContainerViews()
         setupFirstContainer(self.firstContainer)
         setupSecondContainer(self.secondContainer)
+        setupThirdContainer(self.thridContainer)
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,7 +98,6 @@ class ViewController: UIViewController {
     // Second container
     func setupSecondContainer(containerView: UIView) {
         // Build slots
-        
         var slotWidth = (containerView.bounds.width * cThird)
         var slotHeight = (containerView.bounds.height * cThird)
         
@@ -107,6 +115,71 @@ class ViewController: UIViewController {
                 
             }
         }
+    }
+    
+    // Third container
+    func setupThirdContainer(contaierView:UIView) {
+        let cFontName = "Menlo-Bold"
+        let cFontSize:CGFloat = 16
+        let cFontTitleName = "AmericanTypeWriter"
+        let cFontTitleSize:CGFloat = 14
+        
+        self.creditsLabel = UILabel()
+        self.creditsLabel.text = "000"
+        self.creditsLabel.textColor = UIColor.redColor()
+        self.creditsLabel.font = UIFont(name: cFontName, size: cFontSize)
+        self.creditsLabel.sizeToFit()
+        self.creditsLabel.center = CGPoint(x: contaierView.frame.width * cSixth, y: contaierView.frame.height * cThird)
+        self.creditsLabel.textAlignment = NSTextAlignment.Center
+        self.creditsLabel.backgroundColor = UIColor.darkGrayColor()
+        contaierView.addSubview(self.creditsLabel)
+        
+        self.betLabel = UILabel()
+        self.betLabel.text = "0000"
+        self.betLabel.textColor = UIColor.redColor()
+        self.betLabel.font = UIFont(name: cFontName, size: cFontSize)
+        self.betLabel.sizeToFit()
+        self.betLabel.center = CGPoint(x: contaierView.frame.width * cSixth * 3, y: contaierView.frame.height * cThird)
+        self.betLabel.textAlignment = NSTextAlignment.Center
+        self.betLabel.backgroundColor = UIColor.darkGrayColor()
+        contaierView.addSubview(self.betLabel)
+        
+        self.winnerPaidLabel = UILabel()
+        self.winnerPaidLabel.text = "000000"
+        self.winnerPaidLabel.textColor = UIColor.redColor()
+        self.winnerPaidLabel.font = UIFont(name: cFontName, size: cFontSize)
+        self.winnerPaidLabel.sizeToFit()
+        self.winnerPaidLabel.center = CGPoint(x: contaierView.frame.width * cSixth * 5, y: contaierView.frame.height * cThird)
+        self.winnerPaidLabel.textAlignment = NSTextAlignment.Center
+        self.winnerPaidLabel.backgroundColor = UIColor.darkGrayColor()
+        contaierView.addSubview(self.winnerPaidLabel)
+        
+        self.creditsTitleLabel = UILabel()
+        self.creditsTitleLabel.text = "Credits"
+        self.creditsTitleLabel.textColor = UIColor.blackColor()
+        self.creditsTitleLabel.font = UIFont(name: cFontTitleName, size: cFontTitleSize)
+        self.creditsTitleLabel.sizeToFit()
+        self.creditsTitleLabel.center = CGPoint(x: contaierView.frame.width * cSixth, y: contaierView.frame.height * cThird * 2)
+        self.creditsTitleLabel.textAlignment = NSTextAlignment.Center
+        contaierView.addSubview(self.creditsTitleLabel)
+        
+        self.betTitleLabel = UILabel()
+        self.betTitleLabel.text = "Bet"
+        self.betTitleLabel.textColor = UIColor.blackColor()
+        self.betTitleLabel.font = UIFont(name: cFontTitleName, size: cFontTitleSize)
+        self.betTitleLabel.sizeToFit()
+        self.betTitleLabel.center = CGPoint(x: contaierView.frame.width * cSixth * 3, y: contaierView.frame.height * cThird * 2)
+        self.betTitleLabel.textAlignment = NSTextAlignment.Center
+        contaierView.addSubview(self.betTitleLabel)
+        
+        self.winnerPaidTitleLabel = UILabel()
+        self.winnerPaidTitleLabel.text = "Winner Paid"
+        self.winnerPaidTitleLabel.textColor = UIColor.blackColor()
+        self.winnerPaidTitleLabel.font = UIFont(name: cFontTitleName, size: cFontTitleSize)
+        self.winnerPaidTitleLabel.sizeToFit()
+        self.winnerPaidTitleLabel.center = CGPoint(x: contaierView.frame.width * cSixth * 5, y: contaierView.frame.height * cThird * 2)
+        self.winnerPaidTitleLabel.textAlignment = NSTextAlignment.Center
+        contaierView.addSubview(self.winnerPaidTitleLabel)
     }
     
 }
